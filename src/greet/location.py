@@ -7,3 +7,9 @@ def greet(tz):
     location = tz.split("/")[-1].replace("_"," ") 
     return f"Hello, {location}! The time is {friendly_time}."
 
+def cli(args=None):
+    """Process command line arguments."""
+    if not args:
+        args = sys.argv[1:]    
+    tz = args[0]
+    print(greet(tz))
